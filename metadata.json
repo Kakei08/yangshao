@@ -1,0 +1,5 @@
+{
+  "name": "Remix: 仰韶·重构 (Yangshao Reconstruct)",
+  "description": "基于仰韶文化彩陶纹样的算法艺术生成与3D陶器预览系统。支持二方连续、四方连续、形状文法等多种生成模式，并可将纹样实时投射至3D陶罐模型。",
+  "requestFramePermissions": []
+}
