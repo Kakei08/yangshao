@@ -1,27 +1,16 @@
 {
-  "version": 2,
-  "builds": [
+  "rewrites": [
     {
-      "src": "package.json",
-      "use": "@vercel/static-build"
+      "source": "/share/:id",
+      "destination": "/api/index"
     },
     {
-      "src": "server.ts",
-      "use": "@vercel/node"
-    }
-  ],
-  "routes": [
-    {
-      "src": "/api/(.*)",
-      "dest": "/server.ts"
+      "source": "/(.*(?:\\.png|\\.jpg|\\.jpeg|\\.gif|\\.svg|\\.gltf|\\.js|\\.css|\\.json|\\.ico|\\.woff|\\.woff2).*$)",
+      "destination": "/$1"
     },
     {
-      "src": "/share/(.*)",
-      "dest": "/server.ts"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "/dist/$1"
+      "source": "/(.*)",
+      "destination": "/index.html"
     }
   ]
 }
