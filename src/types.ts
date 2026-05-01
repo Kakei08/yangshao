@@ -50,32 +50,32 @@ export type GenerationMode = 'repeat2' | 'repeat4' | 'shapeGrammar' | 'lsys' | '
 
 export const PATTERNS: Pattern[] = [
   // 花瓣纹
-  { id: "huaban-1", categoryId: "huaban", categoryName: "花瓣纹", name: "花瓣纹 1-1", info: "", file: "/assests/pattern/花瓣纹1-1.svg", ratio: 1.0 },
-  { id: "huaban-2", categoryId: "huaban", categoryName: "花瓣纹", name: "花瓣纹 1-2", info: "", file: "/assests/pattern/花瓣纹1-2.svg", ratio: 1.0 },
-  { id: "huaban-3", categoryId: "huaban", categoryName: "花瓣纹", name: "花瓣纹 1-3", info: "", file: "/assests/pattern/花瓣纹1-3.svg", ratio: 1.0 },
-  { id: "huaban-4", categoryId: "huaban", categoryName: "花瓣纹", name: "花瓣纹 1-4", info: "", file: "/assests/pattern/花瓣纹1-4.svg", ratio: 1.0 },
-  { id: "huaban-5", categoryId: "huaban", categoryName: "花瓣纹", name: "花瓣纹 1-5", info: "", file: "/assests/pattern/花瓣纹1-5.svg", ratio: 1.0 },
+  { id: "huaban-1", categoryId: "huaban", categoryName: "花瓣纹", name: "花瓣纹 1-1", info: "", file: "/assets/pattern/花瓣纹1-1.svg", ratio: 1.0 },
+  { id: "huaban-2", categoryId: "huaban", categoryName: "花瓣纹", name: "花瓣纹 1-2", info: "", file: "/assets/pattern/花瓣纹1-2.svg", ratio: 1.0 },
+  { id: "huaban-3", categoryId: "huaban", categoryName: "花瓣纹", name: "花瓣纹 1-3", info: "", file: "/assets/pattern/花瓣纹1-3.svg", ratio: 1.0 },
+  { id: "huaban-4", categoryId: "huaban", categoryName: "花瓣纹", name: "花瓣纹 1-4", info: "", file: "/assets/pattern/花瓣纹1-4.svg", ratio: 1.0 },
+  { id: "huaban-5", categoryId: "huaban", categoryName: "花瓣纹", name: "花瓣纹 1-5", info: "", file: "/assets/pattern/花瓣纹1-5.svg", ratio: 1.0 },
 
   // 几何纹
-  { id: "jihe-1", categoryId: "jihe", categoryName: "几何纹", name: "几何纹 1-1", info: "", file: "/assests/pattern/几何纹1-1.svg", ratio: 1.0 },
-  { id: "jihe-2", categoryId: "jihe", categoryName: "几何纹", name: "几何纹 1-2", info: "", file: "/assests/pattern/几何纹1-2.svg", ratio: 1.0 },
-  { id: "jihe-3", categoryId: "jihe", categoryName: "几何纹", name: "几何纹 1-3", info: "", file: "/assests/pattern/几何纹1-3.svg", ratio: 1.0 },
-  { id: "jihe-4", categoryId: "jihe", categoryName: "几何纹", name: "几何纹 1-4", info: "", file: "/assests/pattern/几何纹1-4.svg", ratio: 1.0 },
-  { id: "jihe-5", categoryId: "jihe", categoryName: "几何纹", name: "几何纹 1-5", info: "", file: "/assests/pattern/几何纹1-5.svg", ratio: 1.0 },
+  { id: "jihe-1", categoryId: "jihe", categoryName: "几何纹", name: "几何纹 1-1", info: "", file: "/assets/pattern/几何纹1-1.svg", ratio: 1.0 },
+  { id: "jihe-2", categoryId: "jihe", categoryName: "几何纹", name: "几何纹 1-2", info: "", file: "/assets/pattern/几何纹1-2.svg", ratio: 1.0 },
+  { id: "jihe-3", categoryId: "jihe", categoryName: "几何纹", name: "几何纹 1-3", info: "", file: "/assets/pattern/几何纹1-3.svg", ratio: 1.0 },
+  { id: "jihe-4", categoryId: "jihe", categoryName: "几何纹", name: "几何纹 1-4", info: "", file: "/assets/pattern/几何纹1-4.svg", ratio: 1.0 },
+  { id: "jihe-5", categoryId: "jihe", categoryName: "几何纹", name: "几何纹 1-5", info: "", file: "/assets/pattern/几何纹1-5.svg", ratio: 1.0 },
 
   // 动物纹
-  { id: "dongwu-1", categoryId: "dongwu", categoryName: "动物纹", name: "动物纹 1-1", info: "", file: "/assests/pattern/动物纹1-1.svg", ratio: 1.0 },
-  { id: "dongwu-2", categoryId: "dongwu", categoryName: "动物纹", name: "动物纹 1-2", info: "", file: "/assests/pattern/动物纹1-2.svg", ratio: 1.0 },
-  { id: "dongwu-3", categoryId: "dongwu", categoryName: "动物纹", name: "动物纹 1-3", info: "", file: "/assests/pattern/动物纹1-3.svg", ratio: 1.0 },
-  { id: "dongwu-4", categoryId: "dongwu", categoryName: "动物纹", name: "动物纹 1-4", info: "", file: "/assests/pattern/动物纹1-4.svg", ratio: 1.0 },
-  { id: "dongwu-5", categoryId: "dongwu", categoryName: "动物纹", name: "动物纹 1-5", info: "", file: "/assests/pattern/动物纹1-5.svg", ratio: 1.0 },
+  { id: "dongwu-1", categoryId: "dongwu", categoryName: "动物纹", name: "动物纹 1-1", info: "", file: "/assets/pattern/动物纹1-1.svg", ratio: 1.0 },
+  { id: "dongwu-2", categoryId: "dongwu", categoryName: "动物纹", name: "动物纹 1-2", info: "", file: "/assets/pattern/动物纹1-2.svg", ratio: 1.0 },
+  { id: "dongwu-3", categoryId: "dongwu", categoryName: "动物纹", name: "动物纹 1-3", info: "", file: "/assets/pattern/动物纹1-3.svg", ratio: 1.0 },
+  { id: "dongwu-4", categoryId: "dongwu", categoryName: "动物纹", name: "动物纹 1-4", info: "", file: "/assets/pattern/动物纹1-4.svg", ratio: 1.0 },
+  { id: "dongwu-5", categoryId: "dongwu", categoryName: "动物纹", name: "动物纹 1-5", info: "", file: "/assets/pattern/动物纹1-5.svg", ratio: 1.0 },
 
   // 旋纹
-  { id: "xuanwen-1", categoryId: "xuanwen", categoryName: "旋纹", name: "旋纹 1-1", info: "", file: "/assests/pattern/旋纹1-1.svg", ratio: 1.0 },
-  { id: "xuanwen-2", categoryId: "xuanwen", categoryName: "旋纹", name: "旋纹 1-2", info: "", file: "/assests/pattern/旋纹1-2.svg", ratio: 1.0 },
-  { id: "xuanwen-3", categoryId: "xuanwen", categoryName: "旋纹", name: "旋纹 1-3", info: "", file: "/assests/pattern/旋纹1-3.svg", ratio: 1.0 },
-  { id: "xuanwen-4", categoryId: "xuanwen", categoryName: "旋纹", name: "旋纹 1-4", info: "", file: "/assests/pattern/旋纹1-4.svg", ratio: 1.0 },
-  { id: "xuanwen-5", categoryId: "xuanwen", categoryName: "旋纹", name: "旋纹 1-5", info: "", file: "/assests/pattern/旋纹1-5.svg", ratio: 1.0 },
+  { id: "xuanwen-1", categoryId: "xuanwen", categoryName: "旋纹", name: "旋纹 1-1", info: "", file: "/assets/pattern/旋纹1-1.svg", ratio: 1.0 },
+  { id: "xuanwen-2", categoryId: "xuanwen", categoryName: "旋纹", name: "旋纹 1-2", info: "", file: "/assets/pattern/旋纹1-2.svg", ratio: 1.0 },
+  { id: "xuanwen-3", categoryId: "xuanwen", categoryName: "旋纹", name: "旋纹 1-3", info: "", file: "/assets/pattern/旋纹1-3.svg", ratio: 1.0 },
+  { id: "xuanwen-4", categoryId: "xuanwen", categoryName: "旋纹", name: "旋纹 1-4", info: "", file: "/assets/pattern/旋纹1-4.svg", ratio: 1.0 },
+  { id: "xuanwen-5", categoryId: "xuanwen", categoryName: "旋纹", name: "旋纹 1-5", info: "", file: "/assets/pattern/旋纹1-5.svg", ratio: 1.0 },
 ];
 
 export const PALETTE = [

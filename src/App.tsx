@@ -80,15 +80,15 @@ const CONFIG = {
 
 function GalleryPage({ onBack }: { onBack: () => void }) {
   const exhibitionImages = [
-    { src: '/assests/exhibition/1.jpg', id: 1019, type: 'NFT', author: '林深见鹿' },
-    { src: '/assests/exhibition/2.jpg', id: 1020, type: 'Public', author: '墨染青丝' },
-    { src: '/assests/exhibition/3.jpg', id: 1021, type: 'NFT', author: '云端漫步者' },
-    { src: '/assests/exhibition/4.jpg', id: 1022, type: 'Public', author: '星空下的陶匠' },
-    { src: '/assests/exhibition/5.jpg', id: 1025, type: 'NFT', author: '算法诗人_01' },
-    { src: '/assests/exhibition/6.jpg', id: 1026, type: 'Public', author: '青铜时代' },
-    { src: '/assests/exhibition/7.jpg', id: 1027, type: 'NFT', author: '数字仰韶_Labs' },
-    { src: '/assests/exhibition/1.jpg', id: 1028, type: 'Public', author: '流沙河' },
-    { src: '/assests/exhibition/2.jpg', id: 1029, type: 'NFT', author: '极简主义者' },
+    { src: '/assets/exhibition/1.jpg', id: 1019, type: 'NFT', author: '林深见鹿' },
+    { src: '/assets/exhibition/2.jpg', id: 1020, type: 'Public', author: '墨染青丝' },
+    { src: '/assets/exhibition/3.jpg', id: 1021, type: 'NFT', author: '云端漫步者' },
+    { src: '/assets/exhibition/4.jpg', id: 1022, type: 'Public', author: '星空下的陶匠' },
+    { src: '/assets/exhibition/5.jpg', id: 1025, type: 'NFT', author: '算法诗人_01' },
+    { src: '/assets/exhibition/6.jpg', id: 1026, type: 'Public', author: '青铜时代' },
+    { src: '/assets/exhibition/7.jpg', id: 1027, type: 'NFT', author: '数字仰韶_Labs' },
+    { src: '/assets/exhibition/1.jpg', id: 1028, type: 'Public', author: '流沙河' },
+    { src: '/assets/exhibition/2.jpg', id: 1029, type: 'NFT', author: '极简主义者' },
   ];
 
   return (
@@ -303,7 +303,7 @@ export default function App() {
   // Load Background Texture Image
   useEffect(() => {
     const img = new Image();
-    img.src = "/assests/bgpic/3.jpg";
+    img.src = "/assets/bgpic/3.jpg";
     img.onload = () => {
       bgTextureImgRef.current = img;
       if (potteryPreviewRef.current && canvasRef.current) {
@@ -1396,7 +1396,7 @@ export default function App() {
                     exit={{ opacity: 0 }}
                     className="absolute inset-0 flex flex-col items-center justify-center pointer-events-none"
                   >
-                    <div className="w-20 h-20 rounded-full border-2 border-dashed border-[#9F2B24] animate-spin-slow flex items-center justify-center">
+                    <div className="w-20 h-20 rounded-full border-2 border-dashed border-[#9F2B24] animate-[spin_12s_linear_infinite] flex items-center justify-center">
                       <Plus className="text-[#9F2B24]" />
                     </div>
                     <p className="mt-6 font-serif-sc text-stone-400 tracking-widest">点击画布开始重构</p>
@@ -1583,13 +1583,6 @@ export default function App() {
       <style dangerouslySetInnerHTML={{ __html: `
         @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@700&display=swap');
         .font-serif-sc { font-family: 'Noto Serif SC', serif; }
-        @keyframes spin-slow {
-          from { transform: rotate(0deg); }
-          to { transform: rotate(360deg); }
-        }
-        .animate-spin-slow {
-          animation: spin-slow 12s linear infinite;
-        }
       `}} />
     </div>
   );

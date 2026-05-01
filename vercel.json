@@ -1,12 +1,12 @@
 {
   "rewrites": [
     {
-      "source": "/share/:id",
+      "source": "/api/(.*)",
       "destination": "/api/index"
     },
     {
-      "source": "/(.*(?:\\.png|\\.jpg|\\.jpeg|\\.gif|\\.svg|\\.gltf|\\.js|\\.css|\\.json|\\.ico|\\.woff|\\.woff2).*$)",
-      "destination": "/$1"
+      "source": "/share/(.*)",
+      "destination": "/api/index"
     },
     {
       "source": "/(.*)",

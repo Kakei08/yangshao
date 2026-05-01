@@ -31,7 +31,7 @@ const PotteryPreview = forwardRef<PotteryPreviewHandle, PotteryPreviewProps>((pr
 
   useEffect(() => {
     const img = new Image();
-    img.src = "/assests/bgpic/3.jpg";
+    img.src = "/assets/bgpic/3.jpg";
     img.onload = () => {
       bgImgRef.current = img;
       setBgLoaded(true);
@@ -443,7 +443,7 @@ const PotteryPreview = forwardRef<PotteryPreviewHandle, PotteryPreviewProps>((pr
       className="w-full h-full relative overflow-hidden rounded-2xl shadow-inner border border-stone-200"
       style={{
         backgroundColor: 'transparent',
-        backgroundImage: 'url("/assests/3d/potterybg.jpg")',
+        backgroundImage: 'url("/assets/3d/potterybg.jpg")',
         backgroundSize: 'cover',
         backgroundPosition: 'center'
       }}
