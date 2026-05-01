@@ -2,9 +2,28 @@ import express from "express";
 import { createServer as createViteServer } from "vite";
 import path from "path";
 import crypto from "crypto";
+import { S3Client, PutObjectCommand, GetObjectCommand } from "@aws-sdk/client-s3";
+import { getSignedUrl } from "@aws-sdk/s3-request-presigner";
 
-// In-memory cache for shared images
+// In-memory cache for shared images (fallback)
 const imageCache = new Map<string, Buffer>();
+
+const s3Configured = Boolean(
+  process.env.S3_ENDPOINT && 
+  process.env.S3_REGION && 
+  process.env.S3_BUCKET && 
+  process.env.S3_ACCESS_KEY_ID && 
+  process.env.S3_SECRET_ACCESS_KEY
+);
+
+const s3 = s3Configured ? new S3Client({
+  endpoint: process.env.S3_ENDPOINT,
+  region: process.env.S3_REGION,
+  credentials: {
+    accessKeyId: process.env.S3_ACCESS_KEY_ID!,
+    secretAccessKey: process.env.S3_SECRET_ACCESS_KEY!
+  }
+}) : null;
 
 async function startServer() {
   const app = express();
@@ -13,7 +32,7 @@ async function startServer() {
   app.use(express.json({ limit: "50mb" }));
 
   // API to upload image and return an ID
-  app.post("/api/share-image", (req, res) => {
+  app.post("/api/share-image", async (req, res) => {
     try {
       const { image } = req.body;
       if (!image) {
@@ -25,12 +44,21 @@ async function startServer() {
       const buffer = Buffer.from(base64Data, "base64");
       const id = crypto.randomUUID();
       
-      imageCache.set(id, buffer);
-
-      // Optionally, clear old images to prevent memory leaks in the future
-      setTimeout(() => {
-        imageCache.delete(id);
-      }, 1000 * 60 * 60 * 24); // Keep for 24 hours
+      if (s3Configured && s3) {
+        const command = new PutObjectCommand({
+          Bucket: process.env.S3_BUCKET,
+          Key: `shares/${id}.png`,
+          Body: buffer,
+          ContentType: "image/png"
+        });
+        await s3.send(command);
+      } else {
+        imageCache.set(id, buffer);
+        console.warn('S3 not configured, storing image in memory (will be lost on restart)');
+        setTimeout(() => {
+          imageCache.delete(id);
+        }, 1000 * 60 * 60 * 24); // Keep for 24 hours
+      }
 
       res.json({ id });
     } catch (err) {
@@ -93,12 +121,28 @@ async function startServer() {
   });
 
   // API to fetch the raw image
-  app.get("/api/image/:id", (req, res) => {
-    const img = imageCache.get(req.params.id);
-    if (img) {
-      res.setHeader("Content-Type", "image/png");
-      res.send(img);
-    } else {
+  app.get("/api/image/:id", async (req, res) => {
+    try {
+      const id = req.params.id;
+      
+      if (s3Configured && s3) {
+        const command = new GetObjectCommand({
+          Bucket: process.env.S3_BUCKET,
+          Key: `shares/${id}.png`
+        });
+        const url = await getSignedUrl(s3, command, { expiresIn: 3600 });
+        res.redirect(url);
+      } else {
+        const img = imageCache.get(id);
+        if (img) {
+          res.setHeader("Content-Type", "image/png");
+          res.send(img);
+        } else {
+          res.status(404).send("Image not found (Memory cache missing or S3 not configured)");
+        }
+      }
+    } catch (err) {
+      console.error("Error fetching image:", err);
       res.status(404).send("Image not found");
     }
   });

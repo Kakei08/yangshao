@@ -1458,7 +1458,10 @@ export default function App() {
               )}
               {isGeneratingQr ? '生成中...' : '下载二维码'}
             </button>
-            <button className="flex items-center gap-2 px-6 py-3 bg-white rounded-2xl shadow-lg border border-stone-100 text-sm font-bold hover:bg-stone-50 transition-all">
+            <button 
+              onClick={() => setCurrentView('gallery')}
+              className="flex items-center gap-2 px-6 py-3 bg-white rounded-2xl shadow-lg border border-stone-100 text-sm font-bold hover:bg-stone-50 transition-all"
+            >
               <Share2 size={18} /> 分享作品
             </button>
           </div>
